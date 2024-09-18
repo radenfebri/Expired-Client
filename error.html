@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#E8EAF6" />
+  <link
+  rel="shortcut icon"
+  href="favicon-16x16.png"
+  type="image/x-icon"
+  />
+  <title>Internet Isolir | Using Network</title>
+  <style>
+    /* cyrillic-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 100;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
+      U+A640-A69F, U+FE2E-FE2F;
+    }
+    
+    /* cyrillic */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 100;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    
+    /* greek-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 100;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+1F00-1FFF;
+    }
+    
+    /* greek */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 100;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0370-03FF;
+    }
+    
+    /* vietnamese */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 100;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+      U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+      U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+    
+    /* latin-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 100;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F,
+      U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+      U+A720-A7FF;
+    }
+    
+    /* latin */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 100;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+      format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+      U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+      U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    /* cyrillic-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
+      U+A640-A69F, U+FE2E-FE2F;
+    }
+    
+    /* cyrillic */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    
+    /* greek-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+1F00-1FFF;
+    }
+    
+    /* greek */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0370-03FF;
+    }
+    
+    /* vietnamese */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+      U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+      U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+    
+    /* latin-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F,
+      U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+      U+A720-A7FF;
+    }
+    
+    /* latin */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+      format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+      U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+      U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    /* cyrillic-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
+      U+A640-A69F, U+FE2E-FE2F;
+    }
+    
+    /* cyrillic */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    
+    /* greek-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+1F00-1FFF;
+    }
+    
+    /* greek */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0370-03FF;
+    }
+    
+    /* vietnamese */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+      U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+      U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+    
+    /* latin-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F,
+      U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+      U+A720-A7FF;
+    }
+    
+    /* latin */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+      format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+      U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+      U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    /* cyrillic-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
+      U+A640-A69F, U+FE2E-FE2F;
+    }
+    
+    /* cyrillic */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    
+    /* greek-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+1F00-1FFF;
+    }
+    
+    /* greek */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0370-03FF;
+    }
+    
+    /* vietnamese */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+      U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+      U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+    
+    /* latin-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F,
+      U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+      U+A720-A7FF;
+    }
+    
+    /* latin */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+      format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+      U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+      U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    /* cyrillic-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
+      U+A640-A69F, U+FE2E-FE2F;
+    }
+    
+    /* cyrillic */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    
+    /* greek-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+1F00-1FFF;
+    }
+    
+    /* greek */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0370-03FF;
+    }
+    
+    /* vietnamese */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+      U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+      U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+    
+    /* latin-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F,
+      U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+      U+A720-A7FF;
+    }
+    
+    /* latin */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+      format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+      U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+      U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    /* cyrillic-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
+      U+A640-A69F, U+FE2E-FE2F;
+    }
+    
+    /* cyrillic */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    
+    /* greek-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+1F00-1FFF;
+    }
+    
+    /* greek */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0370-03FF;
+    }
+    
+    /* vietnamese */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+      U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+      U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+    
+    /* latin-ext */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+      format("woff2");
+      unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F,
+      U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+      U+A720-A7FF;
+    }
+    
+    /* latin */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(font/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+      format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+      U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+      U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    :root {
+      /* Color */
+      --primary: #ebecef;
+      --primary-second: #0572e6;
+      --primary-hover: #0fb803;
+      /* --primary-hover: #1c87f8; */
+      --white: #ffffff;
+      --black: #000000;
+      --dark: #2b2b2b;
+      --gray: #383838;
+      --lightgray: #555555;
+      --graythint: #fbfbfb;
+      --body: #e8eaf6;
+      --grayhover: #dddddd;
+      
+      /* Font size */
+      --title: 20px;
+      --subtitle: 14px;
+      --description: 13px;
+      
+      /* Weight */
+      --regular: 400;
+      --medium: 500;
+      --bold: 700;
+    }
+    
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: var(--body);
+      font-family: "inter";
+    }
+    
+    .card {
+      max-width: 359px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0px 26px 80px 0px rgba(0, 0, 0, 0.11);
+      background-color: var(--white);
+      margin: auto;
+    }
+    
+    .mb-5 {
+      margin-bottom: 5px;
+    }
+    
+    .pb-5 {
+      padding-bottom: 45px;
+    }
+    
+    .mt-5 {
+      margin-top: 5px;
+    }
+    
+    .card-body {
+      padding: 18px;
+    }
+    
+    .title {
+      font-size: var(--title);
+      font-weight: var(--bold);
+      margin: 13px 0 14px 0;
+      color: var(--dark);
+    }
+    
+    .subtitle {
+      font-size: var(--subtitle);
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+    
+    .description {
+      font-size: var(--description);
+      color: var(--lightgray);
+      margin-bottom: 10px;
+      line-height: 22px;
+    }
+    
+    .number,
+    .account {
+      font-size: var(--description);
+      font-weight: var(--medium);
+      color: var(--dark);
+      text-align: center;
+    }
+    
+    ol {
+      padding-left: 20px;
+    }
+    
+    .account {
+      padding: 10px;
+      background-color: var(--graythint);
+      border-radius: 7px;
+      border: 1px dashed #c1c1c1;
+    }
+    
+    .w-100 {
+      width: 100vw;
+    }
+    
+    .d-block {
+      display: block !important;
+      text-align: center;
+    }
+    
+    .btn {
+      font-size: var(--description);
+      padding: 10px 12px;
+      font-weight: var(--bold);
+      margin-bottom: 0;
+      color: var(--dark);
+      display: inline-block;
+      text-decoration: none;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-image: none;
+      border: 1px solid transparent;
+      -webkit-tap-highlight-color: transparent !important;
+      border-radius: 8px;
+      transition: 0.5s;
+    }
+    
+    .btn:focus,
+    .btn:active:focus {
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
+    }
+    
+    .btn:hover,
+    .btn:focus {
+      color: #333;
+      text-decoration: none;
+    }
+    
+    .btn:active {
+      background-image: none;
+      outline: 0;
+    }
+    
+    /* button primary
+    ---------------------------- */
+    .btn-primary {
+      color: var(--white);
+      background-color: var(--primary-second);
+    }
+    
+    .btn-primary:focus {
+      color: var(--white);
+      background-color: var(--primary-second);
+    }
+    
+    .btn-primary:hover {
+      color: var(--white);
+      background-color: var(--primary-hover);
+    }
+    
+    .btn-primary:active {
+      color: var(--white);
+      background-color: var(--primary-second);
+    }
+    
+    .container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    
+    @media (min-width: 768px) {
+      .container {
+        max-width: 750px;
+      }
+    }
+    
+    @media (min-width: 992px) {
+      .container {
+        max-width: 970px;
+      }
+    }
+    
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 1170px;
+      }
+    }
+    
+    .d-grid {
+      display: grid;
+    }
+    
+    .brand {
+      margin-bottom: -20px;
+    }
+    
+    .d-flex {
+      display: flex;
+    }
+    
+    .text-header {
+      align-items: center;
+    }
+    
+    .account-btn-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: -1rem;
+      /* Align items vertically */
+    }
+    
+    .account {
+      flex-grow: 1;
+      /* Fill remaining space */
+      margin-right: 10px;
+      /* Adjust as needed */
+    }
+    
+    .copied {
+      background-color: #0fb803;
+    }
+    
+    /* Accordion style */
+    
+    .accordion-single {
+      border-bottom: 1px solid #efefef;
+      margin-top: 10px;
+    }
+    
+    .accordion-single-title {
+      border-top: 1px solid #efefef;
+      padding: 20px 0;
+      cursor: pointer;
+      position: relative;
+      font-size: 14px;
+      margin: 0;
+      color: var(--black);
+      font-weight: 600;
+    }
+    
+    .accordion-single-title::after {
+      content: "";
+      position: absolute;
+      right: 2px;
+      top: 50%;
+      transition: all 0.2s ease-in-out;
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-top: solid 2px #999;
+      border-right: solid 2px #999;
+      transform: translateY(-50%) rotate(135deg);
+    }
+    
+    .accordion-single-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+    }
+    
+    .accordion-single-item.is-open .accordion-single-content {
+      max-height: unset;
+    }
+    
+    .accordion-single-item.is-open .accordion-single-title::after {
+      transform: translateY(-50%) rotate(315deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card mb-5 mt-5">
+      <div class="card-body">
+        <div class="d-grid">
+          <!-- Your logo -->
+          <div class="brand">
+            <img src="un.svg" alt="Using Network">
+          </div>
+        </div>
+        
+        <div class="d-flex text-header">
+          <!-- Icon -->
+          <svg
+          style="margin-right: 10px"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 48 48"
+          fill="none"
+          >
+          <path
+          d="M44.5 34.5L28.33 6.49999C27.8911 5.73996 27.26 5.10882 26.4999 4.67002C25.7398 4.23122 24.8776 4.00021 24 4.00021C23.1224 4.00021 22.2602 4.23122 21.5001 4.67002C20.74 5.10882 20.1089 5.73996 19.67 6.49999L3.5 34.5C3.06099 35.2604 2.82995 36.1229 2.83012 37.001C2.83029 37.879 3.06166 38.7415 3.50097 39.5017C3.94027 40.2619 4.572 40.893 5.33264 41.3316C6.09328 41.7701 6.95599 42.0007 7.834 42H40.166C41.0437 42 41.9059 41.7689 42.666 41.3301C43.426 40.8912 44.0572 40.26 44.496 39.4999C44.9349 38.7398 45.1659 37.8776 45.1659 37C45.1659 36.1223 44.9348 35.2601 44.496 34.5H44.5Z"
+          fill="url(#paint0_linear_2_39)"
+          />
+          <path
+          d="M24 30C24.524 30.0024 25.0299 29.8088 25.4185 29.4572C25.807 29.1057 26.0501 28.6216 26.1 28.1L27.28 16.3C27.322 15.8824 27.2759 15.4607 27.1446 15.062C27.0134 14.6634 26.8 14.2967 26.5182 13.9857C26.2364 13.6746 25.8925 13.4262 25.5087 13.2564C25.1249 13.0866 24.7097 12.9993 24.29 13H23.71C23.2907 13 22.8761 13.0879 22.4929 13.258C22.1097 13.428 21.7664 13.6766 21.4851 13.9875C21.2039 14.2985 20.9909 14.6649 20.86 15.0632C20.7291 15.4615 20.6831 15.8828 20.725 16.3L21.905 28.1C21.9548 28.6207 22.1972 29.1041 22.5847 29.4555C22.9722 29.807 23.4769 30.0011 24 30Z"
+          fill="url(#paint1_linear_2_39)"
+          />
+          <path
+          d="M24 38C25.933 38 27.5 36.433 27.5 34.5C27.5 32.567 25.933 31 24 31C22.067 31 20.5 32.567 20.5 34.5C20.5 36.433 22.067 38 24 38Z"
+          fill="url(#paint2_linear_2_39)"
+          />
+          <defs>
+            <linearGradient
+            id="paint0_linear_2_39"
+            x1="12.134"
+            y1="20.336"
+            x2="42.027"
+            y2="41.389"
+            gradientUnits="userSpaceOnUse"
+            >
+            <stop stop-color="#FED200" />
+            <stop offset="1" stop-color="#F59815" />
+          </linearGradient>
+          <linearGradient
+          id="paint1_linear_2_39"
+          x1="20.318"
+          y1="15.588"
+          x2="27.55"
+          y2="26.115"
+          gradientUnits="userSpaceOnUse"
+          >
+          <stop stop-color="#3E4154" />
+          <stop offset="1" stop-color="#1B2129" />
+        </linearGradient>
+        <linearGradient
+        id="paint2_linear_2_39"
+        x1="21.779"
+        y1="32.279"
+        x2="26.076"
+        y2="36.576"
+        gradientUnits="userSpaceOnUse"
+        >
+        <stop stop-color="#3E4154" />
+        <stop offset="1" stop-color="#1B2129" />
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="title">Akun anda terisolir!</div>
+</div>
+<div class="subtitle">Hi, pelanggan setia kami</div>
+<p class="description">
+  Mohon maaf. Dengan berat hati kami sampaikan bahwa akun anda saat
+  ini sedang terisolir otomatis oleh system kami. Untuk dapat kembali
+  menggunakan layanan internet kami, silakan lakukan pembayaran paket
+  berlangganan internet anda.
+</p>
+<p class="description">
+  <b>Pembayaran dapat dilakukan dengan cara:</b>
+</p>
+<ol class="description">
+  <li>Cash/Tunai kunjungi ke kantor kami.</li>
+  <li>
+    Transfer ke Rekening Bank / E-Wallet kami dengan A.N
+    <b
+    ><a
+    href="https://radenfebri.my.id"
+    style="text-decoration: none; color: #1c87f8"
+    target="_blank"
+    >Eka Febriansah</a
+    ></b
+    >.
+  </li>
+  <li>
+    Melalui QRIS dengan A.N
+    <b
+    ><a
+    href="https://wa.me/6285156000254"
+    style="text-decoration: none; color: #1c87f8"
+    target="_blank"
+    >Raden Febri Store</a
+    ></b
+    >.
+  </li>
+</ol>
+<p class="description">
+  Untuk melakukan & konfirmasi pembayaran Hubungi WhatsApp:
+  <strong
+  ><a
+  style="text-decoration: none; color: #1c87f8"
+  href="https://wa.me/6285156000254"
+  target="_blank"
+  >+62 851 5600 0254</a
+  ></strong
+  >
+</p>
+
+<!-- acc single -->
+<div class="accordion-single js-acc-single">
+  <!-- BANK -->
+  <div class="accordion-single-item js-acc-item">
+    <h2 class="accordion-single-title js-acc-single-trigger">
+      Transfer Bank
+    </h2>
+    <div class="accordion-single-content">
+      <div class="pb-5">
+        <div class="account-btn-container">
+          <p class="account">
+            <b style="color: #0572e6">BRI ~</b>
+            <span class="number1">611401013164539</span>
+          </p>
+          <a
+          href="#"
+          class="btn btn-primary d-block copy-button"
+          onclick="copyLink1(event, this)"
+          >Copy</a
+          >
+        </div>
+        
+        <div class="account-btn-container">
+          <p class="account">
+            <b style="color: #0572e6">BCA ~</b>
+            <span class="number2">2640689849</span>
+          </p>
+          <a
+          href="#"
+          class="btn btn-primary d-block copy-button"
+          onclick="copyLink2(event, this)"
+          >Copy</a
+          >
+        </div>
+        
+        <div class="account-btn-container">
+          <p class="account">
+            <b style="color: #0572e6">BCA DIGITAL ~</b>
+            <span class="number3">009316295280</span>
+          </p>
+          <a
+          href="#"
+          class="btn btn-primary d-block copy-button"
+          onclick="copyLink3(event, this)"
+          >Copy</a
+          >
+        </div>
+        
+        <div class="account-btn-container">
+          <p class="account">
+            <b style="color: #0572e6">MANDIRI ~</b>
+            <span class="number4">1430029172671</span>
+          </p>
+          <a
+          href="#"
+          class="btn btn-primary d-block copy-button"
+          onclick="copyLink4(event, this)"
+          >Copy</a
+          >
+        </div>
+        
+        <div class="account-btn-container">
+          <p class="account">
+            <b style="color: #0572e6">JAGO ~</b>
+            <span class="number5">105573678757</span>
+          </p>
+          <a
+          href="#"
+          class="btn btn-primary d-block copy-button"
+          onclick="copyLink5(event, this)"
+          >Copy</a
+          >
+        </div>
+        
+        <div class="account-btn-container">
+          <p class="account">
+            <b style="color: #0572e6">JENIUS ~</b>
+            <span class="number6">90380149121</span>
+          </p>
+          <a
+          href="#"
+          class="btn btn-primary d-block copy-button"
+          onclick="copyLink6(event, this)"
+          >Copy</a
+          >
+        </div>
+        
+        <div class="account-btn-container">
+          <p class="account">
+            <b style="color: #0572e6">SEABANK ~</b>
+            <span class="number7">901218499726</span>
+          </p>
+          <a
+          href="#"
+          class="btn btn-primary d-block copy-button"
+          onclick="copyLink7(event, this)"
+          >Copy</a
+          >
+        </div>
+        
+        <div class="account-btn-container">
+          <p class="account">
+            <b style="color: #0572e6">NEOBANK ~</b>
+            <span class="number8">5859459401102933</span>
+          </p>
+          <a
+          href="#"
+          class="btn btn-primary d-block copy-button"
+          onclick="copyLink8(event, this)"
+          >Copy</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- E-WALLET -->
+  <div class="accordion-single-item js-acc-item">
+    <h2 class="accordion-single-title js-acc-single-trigger">
+      E-Wallet
+    </h2>
+    <div class="accordion-single-content">
+      <div class="pb-5">
+        <div class="account-btn-container">
+          <p class="account">
+            <b style="color: #0572e6">DANA ~</b>
+            <span class="wallet1">082147639955</span>
+          </p>
+          <a
+          href="#"
+          class="btn btn-primary d-block copy-button"
+          onclick="Wallet1(event, this)"
+          >Copy</a
+          >
+        </div>
+        
+        <div class="account-btn-container">
+          <p class="account">
+            <b style="color: #0572e6">GOPAY ~</b>
+            <span class="wallet2">082147639955</span>
+          </p>
+          <a
+          href="#"
+          class="btn btn-primary d-block copy-button"
+          onclick="Wallet2(event, this)"
+          >Copy</a
+          >
+        </div>
+        
+        <div class="account-btn-container">
+          <p class="account">
+            <b style="color: #0572e6">OVO ~</b>
+            <span class="wallet3">082147639955</span>
+          </p>
+          <a
+          href="#"
+          class="btn btn-primary d-block copy-button"
+          onclick="Wallet3(event, this)"
+          >Copy</a
+          >
+        </div>
+        
+        <div class="account-btn-container">
+          <p class="account">
+            <b style="color: #0572e6">LINKAJA ~</b>
+            <span class="wallet4">082147639955</span>
+          </p>
+          <a
+          href="#"
+          class="btn btn-primary d-block copy-button"
+          onclick="Wallet4(event, this)"
+          >Copy</a
+          >
+        </div>
+        
+        <div class="account-btn-container">
+          <p class="account">
+            <b style="color: #0572e6">SHOPEEPAY ~</b>
+            <span class="wallet5">082147639955</span>
+          </p>
+          <a
+          href="#"
+          class="btn btn-primary d-block copy-button"
+          onclick="Wallet5(event, this)"
+          >Copy</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- QRIS -->
+  <div class="accordion-single-item js-acc-item">
+    <h2 class="accordion-single-title js-acc-single-trigger">QRIS</h2>
+    <div class="accordion-single-content">
+      <img
+      src="QRIS.png"
+      alt="QRIS"
+      style="width: 100%; margin-bottom: 20px; border-radius: 8px"
+      />
+      <a
+      href="QRIS.png"
+      target="_blank"
+      class="btn btn-primary d-block"
+      download="QRIS"
+      >Download
+    </a>
+  </div>
+</div>
+</div>
+<!-- accordion-single -->
+</div>
+</div>
+</div>
+
+<script>
+  // Script Bank
+  function copyLink1(event, button) {
+    event.preventDefault();
+    
+    // Get the content of the number element
+    var numberText = document.querySelector(".number1").innerText;
+    
+    // Create a temporary input element
+    var tempInput = document.createElement("input");
+    tempInput.value = numberText;
+    
+    // Append the input element to the body
+    document.body.appendChild(tempInput);
+    
+    // Select the input content
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+    
+    // Change the button text and disable it
+    button.innerText = "Copied!";
+    button.disabled = true;
+    
+    // Add CSS class to the button
+    button.classList.add("copied");
+    
+    // Reset button text, enable it, and remove CSS class after a delay (3 seconds in this example)
+    setTimeout(function () {
+      button.innerText = "Copy";
+      button.disabled = false;
+      button.classList.remove("copied");
+    }, 3000);
+  }
+  
+  function copyLink2(event, button) {
+    event.preventDefault();
+    
+    // Get the content of the number element
+    var numberText = document.querySelector(".number2").innerText;
+    
+    // Create a temporary input element
+    var tempInput = document.createElement("input");
+    tempInput.value = numberText;
+    
+    // Append the input element to the body
+    document.body.appendChild(tempInput);
+    
+    // Select the input content
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+    
+    // Change the button text and disable it
+    button.innerText = "Copied!";
+    button.disabled = true;
+    
+    // Add CSS class to the button
+    button.classList.add("copied");
+    
+    // Reset button text, enable it, and remove CSS class after a delay (3 seconds in this example)
+    setTimeout(function () {
+      button.innerText = "Copy";
+      button.disabled = false;
+      button.classList.remove("copied");
+    }, 3000);
+  }
+  
+  function copyLink3(event, button) {
+    event.preventDefault();
+    
+    // Get the content of the number element
+    var numberText = document.querySelector(".number3").innerText;
+    
+    // Create a temporary input element
+    var tempInput = document.createElement("input");
+    tempInput.value = numberText;
+    
+    // Append the input element to the body
+    document.body.appendChild(tempInput);
+    
+    // Select the input content
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+    
+    // Change the button text and disable it
+    button.innerText = "Copied!";
+    button.disabled = true;
+    
+    // Add CSS class to the button
+    button.classList.add("copied");
+    
+    // Reset button text, enable it, and remove CSS class after a delay (3 seconds in this example)
+    setTimeout(function () {
+      button.innerText = "Copy";
+      button.disabled = false;
+      button.classList.remove("copied");
+    }, 3000);
+  }
+  
+  function copyLink4(event, button) {
+    event.preventDefault();
+    
+    // Get the content of the number element
+    var numberText = document.querySelector(".number4").innerText;
+    
+    // Create a temporary input element
+    var tempInput = document.createElement("input");
+    tempInput.value = numberText;
+    
+    // Append the input element to the body
+    document.body.appendChild(tempInput);
+    
+    // Select the input content
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+    
+    // Change the button text and disable it
+    button.innerText = "Copied!";
+    button.disabled = true;
+    
+    // Add CSS class to the button
+    button.classList.add("copied");
+    
+    // Reset button text, enable it, and remove CSS class after a delay (3 seconds in this example)
+    setTimeout(function () {
+      button.innerText = "Copy";
+      button.disabled = false;
+      button.classList.remove("copied");
+    }, 3000);
+  }
+  
+  function copyLink5(event, button) {
+    event.preventDefault();
+    
+    // Get the content of the number element
+    var numberText = document.querySelector(".number5").innerText;
+    
+    // Create a temporary input element
+    var tempInput = document.createElement("input");
+    tempInput.value = numberText;
+    
+    // Append the input element to the body
+    document.body.appendChild(tempInput);
+    
+    // Select the input content
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+    
+    // Change the button text and disable it
+    button.innerText = "Copied!";
+    button.disabled = true;
+    
+    // Add CSS class to the button
+    button.classList.add("copied");
+    
+    // Reset button text, enable it, and remove CSS class after a delay (3 seconds in this example)
+    setTimeout(function () {
+      button.innerText = "Copy";
+      button.disabled = false;
+      button.classList.remove("copied");
+    }, 3000);
+  }
+  
+  function copyLink6(event, button) {
+    event.preventDefault();
+    
+    // Get the content of the number element
+    var numberText = document.querySelector(".number6").innerText;
+    
+    // Create a temporary input element
+    var tempInput = document.createElement("input");
+    tempInput.value = numberText;
+    
+    // Append the input element to the body
+    document.body.appendChild(tempInput);
+    
+    // Select the input content
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+    
+    // Change the button text and disable it
+    button.innerText = "Copied!";
+    button.disabled = true;
+    
+    // Add CSS class to the button
+    button.classList.add("copied");
+    
+    // Reset button text, enable it, and remove CSS class after a delay (3 seconds in this example)
+    setTimeout(function () {
+      button.innerText = "Copy";
+      button.disabled = false;
+      button.classList.remove("copied");
+    }, 3000);
+  }
+  
+  function copyLink7(event, button) {
+    event.preventDefault();
+    
+    // Get the content of the number element
+    var numberText = document.querySelector(".number7").innerText;
+    
+    // Create a temporary input element
+    var tempInput = document.createElement("input");
+    tempInput.value = numberText;
+    
+    // Append the input element to the body
+    document.body.appendChild(tempInput);
+    
+    // Select the input content
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+    
+    // Change the button text and disable it
+    button.innerText = "Copied!";
+    button.disabled = true;
+    
+    // Add CSS class to the button
+    button.classList.add("copied");
+    
+    // Reset button text, enable it, and remove CSS class after a delay (3 seconds in this example)
+    setTimeout(function () {
+      button.innerText = "Copy";
+      button.disabled = false;
+      button.classList.remove("copied");
+    }, 3000);
+  }
+  
+  function copyLink8(event, button) {
+    event.preventDefault();
+    
+    // Get the content of the number element
+    var numberText = document.querySelector(".number8").innerText;
+    
+    // Create a temporary input element
+    var tempInput = document.createElement("input");
+    tempInput.value = numberText;
+    
+    // Append the input element to the body
+    document.body.appendChild(tempInput);
+    
+    // Select the input content
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+    
+    // Change the button text and disable it
+    button.innerText = "Copied!";
+    button.disabled = true;
+    
+    // Add CSS class to the button
+    button.classList.add("copied");
+    
+    // Reset button text, enable it, and remove CSS class after a delay (3 seconds in this example)
+    setTimeout(function () {
+      button.innerText = "Copy";
+      button.disabled = false;
+      button.classList.remove("copied");
+    }, 3000);
+  }
+  
+  // Script E-Wallet
+  function Wallet1(event, button) {
+    event.preventDefault();
+    
+    // Get the content of the number element
+    var numberText = document.querySelector(".wallet1").innerText;
+    
+    // Create a temporary input element
+    var tempInput = document.createElement("input");
+    tempInput.value = numberText;
+    
+    // Append the input element to the body
+    document.body.appendChild(tempInput);
+    
+    // Select the input content
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+    
+    // Change the button text and disable it
+    button.innerText = "Copied!";
+    button.disabled = true;
+    
+    // Add CSS class to the button
+    button.classList.add("copied");
+    
+    // Reset button text, enable it, and remove CSS class after a delay (3 seconds in this example)
+    setTimeout(function () {
+      button.innerText = "Copy";
+      button.disabled = false;
+      button.classList.remove("copied");
+    }, 3000);
+  }
+  
+  function Wallet2(event, button) {
+    event.preventDefault();
+    
+    // Get the content of the number element
+    var numberText = document.querySelector(".wallet2").innerText;
+    
+    // Create a temporary input element
+    var tempInput = document.createElement("input");
+    tempInput.value = numberText;
+    
+    // Append the input element to the body
+    document.body.appendChild(tempInput);
+    
+    // Select the input content
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+    
+    // Change the button text and disable it
+    button.innerText = "Copied!";
+    button.disabled = true;
+    
+    // Add CSS class to the button
+    button.classList.add("copied");
+    
+    // Reset button text, enable it, and remove CSS class after a delay (3 seconds in this example)
+    setTimeout(function () {
+      button.innerText = "Copy";
+      button.disabled = false;
+      button.classList.remove("copied");
+    }, 3000);
+  }
+  
+  function Wallet3(event, button) {
+    event.preventDefault();
+    
+    // Get the content of the number element
+    var numberText = document.querySelector(".wallet3").innerText;
+    
+    // Create a temporary input element
+    var tempInput = document.createElement("input");
+    tempInput.value = numberText;
+    
+    // Append the input element to the body
+    document.body.appendChild(tempInput);
+    
+    // Select the input content
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+    
+    // Change the button text and disable it
+    button.innerText = "Copied!";
+    button.disabled = true;
+    
+    // Add CSS class to the button
+    button.classList.add("copied");
+    
+    // Reset button text, enable it, and remove CSS class after a delay (3 seconds in this example)
+    setTimeout(function () {
+      button.innerText = "Copy";
+      button.disabled = false;
+      button.classList.remove("copied");
+    }, 3000);
+  }
+  
+  function Wallet4(event, button) {
+    event.preventDefault();
+    
+    // Get the content of the number element
+    var numberText = document.querySelector(".wallet4").innerText;
+    
+    // Create a temporary input element
+    var tempInput = document.createElement("input");
+    tempInput.value = numberText;
+    
+    // Append the input element to the body
+    document.body.appendChild(tempInput);
+    
+    // Select the input content
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+    
+    // Change the button text and disable it
+    button.innerText = "Copied!";
+    button.disabled = true;
+    
+    // Add CSS class to the button
+    button.classList.add("copied");
+    
+    // Reset button text, enable it, and remove CSS class after a delay (3 seconds in this example)
+    setTimeout(function () {
+      button.innerText = "Copy";
+      button.disabled = false;
+      button.classList.remove("copied");
+    }, 3000);
+  }
+  
+  function Wallet5(event, button) {
+    event.preventDefault();
+    
+    // Get the content of the number element
+    var numberText = document.querySelector(".wallet5").innerText;
+    
+    // Create a temporary input element
+    var tempInput = document.createElement("input");
+    tempInput.value = numberText;
+    
+    // Append the input element to the body
+    document.body.appendChild(tempInput);
+    
+    // Select the input content
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+    
+    // Change the button text and disable it
+    button.innerText = "Copied!";
+    button.disabled = true;
+    
+    // Add CSS class to the button
+    button.classList.add("copied");
+    
+    // Reset button text, enable it, and remove CSS class after a delay (3 seconds in this example)
+    setTimeout(function () {
+      button.innerText = "Copy";
+      button.disabled = false;
+      button.classList.remove("copied");
+    }, 3000);
+  }
+  
+  // Script accordion
+  const accSingleTriggers = document.querySelectorAll(
+  ".js-acc-single-trigger"
+  );
+  
+  accSingleTriggers.forEach((trigger) =>
+  trigger.addEventListener("click", toggleAccordion)
+  );
+  
+  function toggleAccordion() {
+    const items = document.querySelectorAll(".js-acc-item");
+    const thisItem = this.parentNode;
+    
+    items.forEach((item) => {
+      if (thisItem == item) {
+        thisItem.classList.toggle("is-open");
+        return;
+      }
+      item.classList.remove("is-open");
+    });
+  }
+</script>
+</body>
+</html>
